@@ -1,7 +1,8 @@
-package pham.honestbee.weatherforecastgojek
+package pham.honestbee.weatherforecastgojek.forecast
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import pham.honestbee.weatherforecastgojek.R
 
 class MainActivity : AppCompatActivity() {
 
