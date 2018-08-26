@@ -7,6 +7,11 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+
+    dataBinding {
+        enabled = true
+    }
+
     compileSdkVersion 27
     defaultConfig {
         applicationId "pham.honestbee.weatherforecastgojek"
@@ -15,6 +20,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "URL_ENDPOINT", "\"https://api.apixu.com/v1/\""
+        buildConfigField "String", "APIXU_KEY", "\"239e8bee39ee41e491483051171407\""
     }
     buildTypes {
         release {
@@ -39,6 +47,9 @@ dependencies {
     implementation "com.android.support:design:$rootProject.supportLibraryVersion"
     implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
 
+    // LiveData & ViewModel
+    implementation"android.arch.lifecycle:extensions:$rootProject.lifecycleVersion"
+
     //dagger 2
     implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
     implementation "com.google.dagger:dagger-android:$rootProject.dagger2Version"
@@ -53,4 +64,11 @@ dependencies {
     //glide
     implementation "com.github.bumptech.glide:glide:" + rootProject.glideVersion
     kapt "com.github.bumptech.glide:compiler:" + rootProject.glideVersion
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:" + rootProject.retrofitVersion
+    implementation "com.squareup.retrofit2:converter-gson:" + rootProject.retrofitVersion
+    implementation "com.squareup.retrofit2:adapter-rxjava2:" + rootProject.retrofitVersion
+    implementation "com.squareup.okhttp3:okhttp:" + rootProject.okhttpVersion
+    implementation "com.squareup.okhttp3:logging-interceptor:" + rootProject.okhttpVersion
 }

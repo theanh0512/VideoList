@@ -19,7 +19,7 @@ import javax.inject.Singleton
  *and location of sub-components.
  * */
 @Singleton
-@Component(modules = [ApplicationModule::class, ActivityBindingModule::class, AndroidSupportInjectionModule::class])
+@Component(modules = [ApplicationModule::class, NetworkModule::class, ActivityBindingModule::class, AndroidSupportInjectionModule::class])
 interface AppComponent : AndroidInjector<WeatherForecastGoJekApplication> {
 
     val forecastRepository: ForecastRepository

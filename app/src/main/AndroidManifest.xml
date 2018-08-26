@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pham.honestbee.weatherforecastgojek">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".WeatherForecastGoJekApplication"
         android:allowBackup="true"
